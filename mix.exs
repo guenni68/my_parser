@@ -21,7 +21,7 @@ defmodule MyParser.MixProject do
   # Run "mix help deps" to learn about dependencies.
   defp deps do
     [
-      {:parser_builder, git: "https://github.com/guenni68/parser_builder.git", tag: "1.1.0"}
+      {:parser_builder, "~> 1.1"}
     ]
   end
 end

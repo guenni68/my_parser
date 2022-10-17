@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="US-ASCII" ?>
+<grammar xmlns="http://elixir.parserbuilder.com/v1.0.0">
+  <rule id="resumable1">
+    <literal value="one"/>
+    <optional>
+      <literal value="two"/>
+    </optional>
+    <optional>
+      <literal value="three"/>
+    </optional>
+    <optional>
+      <literal value="four"/>
+    </optional>
+  </rule>
+</grammar>
