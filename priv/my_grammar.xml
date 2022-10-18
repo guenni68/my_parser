@@ -1,6 +1,9 @@
 <?xml version="1.0" encoding="US-ASCII" ?>
 <grammar xmlns="http://elixir.parserbuilder.com/v1.0.0">
-  <rule id="resumable1">
+  <rule id="rule1">
+    <literal value="1234567890"/>
+  </rule>
+  <rule id="rule2">
     <literal value="one"/>
     <optional>
       <literal value="two"/>
