@@ -64,6 +64,9 @@
   <rule id="date" postprocess="tag">
     <tag name="year">
       <untagAndFlatten>
+        <optional>
+          <literal value="-"/>
+        </optional>
         <exactly count="4">
           <ruleRef uri="DIGIT"/>
         </exactly>

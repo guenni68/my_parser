@@ -53,7 +53,7 @@ defmodule MyParserTest do
     fail = fail_parse(parser)
 
     succeed.("2022-01-01")
-    succeed.("1999-12-01")
+    succeed.("-1999-12-01")
     fail.("1-1-1")
   end
 end
