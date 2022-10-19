@@ -16,14 +16,22 @@
       <literal value="four"/>
     </optional>
   </rule>
-  <!-- Demo rules for Part 2 -->
-  <rule id="boolean">
+  <!-- Demo rules for Part 2, AST -->
+  <rule id="boolean1">
     <oneOf>
       <item>
-        <literal value="true"/>
+        <tag name="true">
+          <ignore>
+            <literal value="true"/>
+          </ignore>
+        </tag>
       </item>
       <item>
-        <literal value="false"/>
+        <tag name="false">
+          <ignore>
+            <literal value="false"/>
+          </ignore>
+        </tag>
       </item>
     </oneOf>
   </rule>
