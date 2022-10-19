@@ -20,14 +20,14 @@
   <rule id="boolean1">
     <oneOf>
       <item>
-        <tag name="true">
+        <tag name="True">
           <ignore>
             <literal value="true"/>
           </ignore>
         </tag>
       </item>
       <item>
-        <tag name="false">
+        <tag name="False">
           <ignore>
             <literal value="false"/>
           </ignore>
