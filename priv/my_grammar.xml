@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="US-ASCII" ?>
 <grammar xmlns="http://elixir.parserbuilder.com/v1.0.0">
+  <!-- Demo rules for Part 1 -->
   <rule id="rule1">
     <literal value="1234567890"/>
   </rule>
@@ -14,5 +15,133 @@
     <optional>
       <literal value="four"/>
     </optional>
+  </rule>
+  <!-- Demo rules for Part 2 -->
+  <rule id="boolean">
+    <oneOf>
+      <item>
+        <literal value="true"/>
+      </item>
+      <item>
+        <literal value="false"/>
+      </item>
+    </oneOf>
+  </rule>
+  <!--ABNF Core-->
+  <rule id="DIGITS">
+    <untagAndFlatten>
+      <manyOne>
+        <ruleRef uri="DIGIT"/>
+      </manyOne>
+    </untagAndFlatten>
+  </rule>
+  <rule id="ALPHA">
+    <oneOf>
+      <item>
+        <hexRange start="41" end="5A"/>
+      </item>
+      <item>
+        <hexRange start="61" end="7A"/>
+      </item>
+    </oneOf>
+  </rule>
+  <rule id="BIT">
+    <oneOf>
+      <item>
+        <literal value="0"/>
+      </item>
+      <item>
+        <literal value="1"/>
+      </item>
+    </oneOf>
+  </rule>
+  <rule id="CHAR">
+    <hexRange start="01" end="7F"/>
+  </rule>
+  <rule id="CR">
+    <hexValue value="0D"/>
+  </rule>
+  <rule id="CRLF">
+    <ruleRef uri="CR"/>
+    <ruleRef uri="LF"/>
+  </rule>
+  <rule id="CTL">
+    <oneOf>
+      <item>
+        <hexRange start="00" end="1F"/>
+      </item>
+      <item>
+        <hexValue value="7F"/>
+      </item>
+    </oneOf>
+  </rule>
+  <rule id="DIGIT">
+    <hexRange start="30" end="39"/>
+  </rule>
+  <rule id="DQUOTE" postprocess="ignore">
+    <hexValue value="22"/>
+  </rule>
+  <rule id="HEXDIG">
+    <oneOf>
+      <item>
+        <ruleRef uri="DIGIT"/>
+      </item>
+      <item>
+        <literal value="A"/>
+      </item>
+      <item>
+        <literal value="B"/>
+      </item>
+      <item>
+        <literal value="C"/>
+      </item>
+      <item>
+        <literal value="D"/>
+      </item>
+      <item>
+        <literal value="E"/>
+      </item>
+      <item>
+        <literal value="F"/>
+      </item>
+    </oneOf>
+  </rule>
+  <rule id="HTAB">
+    <hexValue value="09"/>
+  </rule>
+  <rule id="LF">
+    <hexValue value="0A"/>
+  </rule>
+  <rule id="LWSP">
+    <many>
+      <oneOf>
+        <item>
+          <ruleRef uri="WSP"/>
+        </item>
+        <item>
+          <ruleRef uri="CRLF"/>
+          <ruleRef uri="WSP"/>
+        </item>
+      </oneOf>
+    </many>
+  </rule>
+  <rule id="OCTET">
+    <hexRange start="00" end="FF"/>
+  </rule>
+  <rule id="SP">
+    <hexValue value="20"/>
+  </rule>
+  <rule id="VCHAR">
+    <hexRange start="21" end="7E"/>
+  </rule>
+  <rule id="WSP">
+    <oneOf>
+      <item>
+        <ruleRef uri="SP"/>
+      </item>
+      <item>
+        <ruleRef uri="HTAB"/>
+      </item>
+    </oneOf>
   </rule>
 </grammar>

@@ -1,21 +1,5 @@
 # MyParser
 
-**TODO: Add description**
+This repository contains the code examples use in the YouTube video series **Resumable parsing in Elixir**.
 
-## Installation
-
-If [available in Hex](https://hex.pm/docs/publish), the package can be installed
-by adding `my_parser` to your list of dependencies in `mix.exs`:
-
-```elixir
-def deps do
-  [
-    {:my_parser, "~> 0.1.0"}
-  ]
-end
-```
-
-Documentation can be generated with [ExDoc](https://github.com/elixir-lang/ex_doc)
-and published on [HexDocs](https://hexdocs.pm). Once published, the docs can
-be found at <https://hexdocs.pm/my_parser>.
-
+The main files are the [grammar file](priv/my_grammar.xml) in which the parser's rules are defined and the [test files](test).
