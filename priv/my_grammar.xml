@@ -61,6 +61,35 @@
       </item>
     </oneOf>
   </rule>
+  <rule id="date" postprocess="tag">
+    <tag name="year">
+      <untagAndFlatten>
+        <exactly count="4">
+          <ruleRef uri="DIGIT"/>
+        </exactly>
+      </untagAndFlatten>
+    </tag>
+    <ignore>
+      <literal value="-"/>
+    </ignore>
+    <tag name="month">
+      <untagAndFlatten>
+        <exactly count="2">
+          <ruleRef uri="DIGIT"/>
+        </exactly>
+      </untagAndFlatten>
+    </tag>
+    <ignore>
+      <literal value="-"/>
+    </ignore>
+    <tag name="day">
+      <untagAndFlatten>
+        <exactly count="2">
+          <ruleRef uri="DIGIT"/>
+        </exactly>
+      </untagAndFlatten>
+    </tag>
+  </rule>
   <!--ABNF Core-->
   <rule id="ALPHA">
     <oneOf>

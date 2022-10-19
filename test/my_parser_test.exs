@@ -45,4 +45,15 @@ defmodule MyParserTest do
     succeed.("12345.6789")
     fail.("someThingElse")
   end
+
+  test "date" do
+    parser = from_rule_name("date") |> finalize()
+
+    succeed = succeed_parse(parser)
+    fail = fail_parse(parser)
+
+    succeed.("2022-01-01")
+    succeed.("1999-12-01")
+    fail.("1-1-1")
+  end
 end
