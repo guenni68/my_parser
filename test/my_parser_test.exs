@@ -2,7 +2,7 @@ defmodule MyParserTest do
   use MyParserTestSupport
 
   test "rule1" do
-    parser = from_rule_name("rule1")
+    parser = from_rule_name_strict("rule1")
 
     assert {:done, {:ok, _result, ""}} = parser.("1234567890")
 
@@ -11,7 +11,7 @@ defmodule MyParserTest do
   end
 
   test "rule2" do
-    parser = from_rule_name("rule2")
+    parser = from_rule_name_strict("rule2")
 
     assert {:continue, cont1} = parser.("one")
     assert {:done, {:ok, _result, ""}} = cont1.("")
@@ -25,7 +25,7 @@ defmodule MyParserTest do
   end
 
   test "boolean" do
-    parser = from_rule_name("boolean") |> finalize()
+    parser = from_rule_name_strict("boolean") |> finalize()
 
     succeed = succeed_parse(parser)
     fail = fail_parse(parser)
@@ -36,7 +36,7 @@ defmodule MyParserTest do
   end
 
   test "number" do
-    parser = from_rule_name("number") |> finalize()
+    parser = from_rule_name_strict("number") |> finalize()
 
     succeed = succeed_parse(parser)
     fail = fail_parse(parser)
@@ -47,7 +47,7 @@ defmodule MyParserTest do
   end
 
   test "date" do
-    parser = from_rule_name("date") |> finalize()
+    parser = from_rule_name_strict("date") |> finalize()
 
     succeed = succeed_parse(parser)
     fail = fail_parse(parser)
