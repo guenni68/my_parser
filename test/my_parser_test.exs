@@ -24,14 +24,25 @@ defmodule MyParserTest do
     assert {:done, {:ok, _result, ""}} = cont3.("four")
   end
 
-  test "boolean1" do
-    parser = from_rule_name("boolean1") |> finalize()
+  test "boolean" do
+    parser = from_rule_name("boolean") |> finalize()
 
     succeed = succeed_parse(parser)
     fail = fail_parse(parser)
 
     succeed.("True")
     succeed.("FaLse")
+    fail.("someThingElse")
+  end
+
+  test "number" do
+    parser = from_rule_name("number") |> finalize()
+
+    succeed = succeed_parse(parser)
+    fail = fail_parse(parser)
+
+    succeed.("12345")
+    succeed.("12345.6789")
     fail.("someThingElse")
   end
 end

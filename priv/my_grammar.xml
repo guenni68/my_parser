@@ -17,7 +17,7 @@
     </optional>
   </rule>
   <!-- Demo rules for Part 2, AST -->
-  <rule id="boolean1">
+  <rule id="boolean">
     <oneOf>
       <item>
         <tag name="True">
@@ -35,14 +35,33 @@
       </item>
     </oneOf>
   </rule>
-  <!--ABNF Core-->
-  <rule id="DIGITS">
-    <untagAndFlatten>
-      <manyOne>
-        <ruleRef uri="DIGIT"/>
-      </manyOne>
-    </untagAndFlatten>
+  <rule id="number">
+    <oneOf>
+      <item>
+        <tag name="double">
+          <untagAndFlatten>
+            <manyOne>
+              <ruleRef uri="DIGIT"/>
+            </manyOne>
+            <literal value="."/>
+            <manyOne>
+              <ruleRef uri="DIGIT"/>
+            </manyOne>
+          </untagAndFlatten>
+        </tag>
+      </item>
+      <item>
+        <tag name="integer">
+          <untagAndFlatten>
+            <manyOne>
+              <ruleRef uri="DIGIT"/>
+            </manyOne>
+          </untagAndFlatten>
+        </tag>
+      </item>
+    </oneOf>
   </rule>
+  <!--ABNF Core-->
   <rule id="ALPHA">
     <oneOf>
       <item>
